@@ -1,0 +1,1 @@
+@keyframes flash{0%{box-shadow:0 0 0 0 #ffd166}100%{box-shadow:0 0 0 24px transparent}}.hit{animation:flash .45s ease}.level-up{animation:float 1s ease-in-out 3}

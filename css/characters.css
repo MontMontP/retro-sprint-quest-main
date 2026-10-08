@@ -1,0 +1,266 @@
+.character-card {
+    position: relative
+}
+
+.character-card:before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed #17203325;
+    pointer-events: none
+}
+
+.avatar-preview {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff9;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 18px
+}
+
+.avatar-preview .avatar-sprite {
+    margin: 0
+}
+
+.character-builder {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 26px;
+    align-items: start
+}
+
+.character-stage {
+    min-height: 270px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #172033, #263957);
+    border-radius: 10px;
+    overflow: hidden
+}
+
+.character {
+    --skin: #d99b72;
+    --hair: #3b241b;
+    --shirt: #eb5e55;
+    --pants: #354b73;
+    position: relative;
+    width: 125px;
+    height: 220px
+}
+
+.character .head {
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    left: 31px;
+    width: 63px;
+    height: 72px;
+    background: var(--skin);
+    border: 4px solid #172033;
+    border-radius: 44% 44% 42% 42%
+}
+
+.character .hair {
+    position: absolute;
+    z-index: 3;
+    top: 12px;
+    left: 25px;
+    width: 75px;
+    height: 48px;
+    background: var(--hair);
+    border: 4px solid #172033;
+    border-radius: 54% 48% 30% 25%;
+}
+
+.character .hair.long {
+    height: 92px;
+    border-radius: 50% 50% 25% 25%
+}
+
+.character .hair.curly {
+    border-radius: 50%;
+    box-shadow: 9px 0 var(--hair), -9px 4px var(--hair), 0 -8px var(--hair)
+}
+
+.character .hair.ponytail:after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 18px;
+    width: 29px;
+    height: 52px;
+    background: var(--hair);
+    border: 4px solid #172033;
+    border-radius: 50%
+}
+
+.character .face {
+    position: absolute;
+    z-index: 4;
+    top: 55px;
+    left: 45px;
+    width: 9px;
+    height: 9px;
+    background: #172033;
+    border-radius: 50%;
+    box-shadow: 30px 0 #172033
+}
+
+.character .glasses {
+    position: absolute;
+    z-index: 5;
+    top: 51px;
+    left: 39px;
+    width: 48px;
+    height: 19px;
+    border: 3px solid #172033;
+    border-radius: 8px
+}
+
+.character .body {
+    position: absolute;
+    top: 93px;
+    left: 17px;
+    width: 91px;
+    height: 77px;
+    background: var(--shirt);
+    border: 4px solid #172033;
+    border-radius: 18px 18px 8px 8px
+}
+
+.character .arm {
+    position: absolute;
+    top: 102px;
+    width: 18px;
+    height: 63px;
+    background: var(--skin);
+    border: 4px solid #172033;
+    border-radius: 14px
+}
+
+.character .arm.left {
+    left: 4px;
+    transform: rotate(12deg)
+}
+
+.character .arm.right {
+    right: 4px;
+    transform: rotate(-12deg)
+}
+
+.character .legs {
+    position: absolute;
+    top: 163px;
+    left: 29px;
+    width: 63px;
+    height: 54px;
+    background: linear-gradient(90deg, var(--pants) 48%, #172033 48%);
+    border: 4px solid #172033;
+    border-radius: 5px 5px 16px 16px
+}
+
+.character-label {
+    color: white;
+    font: 10px 'Press Start 2P';
+    text-align: center;
+    margin-top: 10px
+}
+
+.builder-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px
+}
+
+.builder-field {
+    display: grid;
+    gap: 7px;
+    font-weight: 700
+}
+
+.builder-field select,
+.builder-field input {
+    width: 100%
+}
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    outline: 2px solid #172033;
+    border-radius: 50%;
+    padding: 0
+}
+
+.color-swatch.selected {
+    outline: 3px solid var(--coral)
+}
+
+.class-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 30px;
+    padding: 0 8px;
+    background: var(--yellow);
+    border: 2px solid #172033;
+    border-radius: 5px;
+    color: #172033;
+    font: 8px 'Press Start 2P'
+}
+
+.pixel-character {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    image-rendering: pixelated
+}
+
+.pixel-character__svg {
+    width: 220px;
+    height: 260px;
+    image-rendering: pixelated;
+    shape-rendering: crispEdges
+}
+
+.pixel-character--small .pixel-character__svg {
+    width: 74px;
+    height: 84px
+}
+
+
+.pixel-character__label {
+    color: var(--ink);
+    font: 14px 'Press Start 2P';
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 8px;
+}
+
+.character-stage .pixel-character__label,
+.hero-art .pixel-character__label {
+    color: white;
+}
+
+@media(max-width:700px) {
+    .character-builder {
+        grid-template-columns: 1fr
+    }
+
+    .character-stage {
+        min-height: 230px
+    }
+
+    .builder-fields {
+        grid-template-columns: 1fr
+    }
+}
