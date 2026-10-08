@@ -349,7 +349,7 @@ h3 {
 }
 
 .scene {
-    min-height: 180px;
+    min-height: 280px;
     background: var(--ink);
     color: white;
     padding: 24px;
@@ -358,15 +358,6 @@ h3 {
     align-items: end;
     position: relative;
     overflow: hidden
-}
-
-.scene:before {
-    content: '✦   ⌁   ✧   ◇';
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    color: var(--yellow);
-    font-size: 22px
 }
 
 .scene .scene-icon {
